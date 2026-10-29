@@ -1,0 +1,16 @@
+record_date,ward_code,sector_code,activity_type,activity_quantity,activity_unit,data_source
+2026-10-01 08:00:00,W-01,ELEC-GRID,Substation Grid Draw,104500.0,kWh,measured
+2026-10-01 09:30:00,W-02,TRANS-MUNI,Public Bus Fleet Transit,38500.0,vehicle-km,telemetry
+2026-10-01 11:00:00,W-03,WASTE-MSW,Municipal Solid Waste Landfill,54.0,tonne,measured
+2026-10-01 14:15:00,W-04,ELEC-GRID,Residential District Power,156000.0,kWh,measured
+2026-10-01 16:45:00,W-05,FUEL-IND,Stationary Natural Gas Combustion,3800.0,m3,measured
+2026-10-02 08:15:00,W-01,ELEC-GRID,Substation Grid Draw,102300.0,kWh,measured
+2026-10-02 09:45:00,W-02,TRANS-MUNI,Public Bus Fleet Transit,39100.0,vehicle-km,telemetry
+2026-10-02 11:30:00,W-03,FUEL-IND,Industrial Station Natural Gas,11800.0,m3,measured
+2026-10-02 14:00:00,W-04,ELEC-GRID,Residential District Power,151200.0,kWh,measured
+2026-10-02 17:00:00,W-06,TRANS-MUNI,Campus Shuttle Operations,18200.0,vehicle-km,telemetry
+2026-10-03 08:30:00,W-01,ELEC-GRID,Substation Grid Draw,98400.0,kWh,measured
+2026-10-03 10:00:00,W-03,WASTE-MSW,Port Terminal Waste Transfer,48.5,tonne,measured
+2026-10-03 12:30:00,W-05,FUEL-IND,Harbor Logistics Stationary Fuel,4100.0,m3,measured
+2026-10-03 15:00:00,W-02,ELEC-GRID,Financial Core Substation,115000.0,kWh,measured
+2026-10-03 18:00:00,W-04,TRANS-MUNI,Transit Bus Route 14,24500.0,vehicle-km,telemetry

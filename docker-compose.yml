@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: carboniq-postgres
+    restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-carboniq}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-carboniq_secure_2026}
+      POSTGRES_DB: ${POSTGRES_DB:-carboniq}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U carboniq -d carboniq"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: carboniq-backend
+    restart: always
+    environment:
+      - DATABASE_URL=postgresql://carboniq:carboniq_secure_2026@db:5432/carboniq
+      - SECRET_KEY=carboniq-super-secret-production-key-2026-secure-hash
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: carboniq-frontend
+    restart: always
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8000/api/v1
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:
